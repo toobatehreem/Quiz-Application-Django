@@ -1,0 +1,16 @@
+{% extends 'App/base.html' %}
+{% load static %}
+{% block body %}
+<section class="pt-4 pt-md-11">
+<div class="container">
+    <h2>Welcome to the Quiz Application</h2>
+    
+    <h3>Select the language you want to practice</h3>
+    
+    <a href={% url 'App:pythonquiz' %}>Python Quiz</a>
+    <br><br>
+    <a href={% url 'App:csharpquiz' %}>C# Quiz</a>
+    </div>
+
+<section>
+    {% endblock body %}

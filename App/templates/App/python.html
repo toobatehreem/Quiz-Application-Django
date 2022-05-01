@@ -1,0 +1,23 @@
+{% extends 'App/base.html' %}
+{% block body %}
+<div class="container">
+<form action="{% url 'App:score'%}" method="post">
+{% csrf_token %}
+
+{%for python in python%}
+
+    <h3>{{python.question}}</h3>
+    <ol  class ="op" type='A'>
+        <li ><input type='radio' name="{{python.question}}" value="{{python.option_1}}" />  {{python.option_1}}<br><br></li>
+        <li ><input type='radio' name="{{python.question}}" value="{{python.option_2}}" />  {{python.option_2}}<br><br></li>
+        <li ><input type='radio' name="{{python.question}}" value="{{python.option_3}}" />  {{python.option_3}}<br><br></li>
+    </ol>
+    <hr/>
+{%endfor%}
+<input hidden type='text' name="python" value="python" />
+<input type="submit" value="Submit">
+
+</form>
+<div>
+
+    {% endblock body %}
